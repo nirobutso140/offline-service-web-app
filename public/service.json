@@ -1,0 +1,75 @@
+[
+    {
+      "serviceImage": "https://i.ibb.co/YZZ6Tmv/mbbo-coach-usa-coach-business-teaser.jpg",
+      "serviceName": "AC Bus Service",
+      "serviceDescription": "AC Bus Service: Enjoy a comfortable and cool journey with our air-conditioned bus services for a luxurious travel experience.",
+      "serviceProviderImage": "https://i.ibb.co/Qp6KNxb/charlie-green-3-Jmf-ENc-L24-M-unsplash.jpg",
+      "serviceProviderName": "Swift Rentals",
+      "servicePrice": "$40/day"
+    },
+    {
+        "serviceImage": "https://i.ibb.co/MDqQj0C/best-camper-van-brands-reviews-luxe-digital.jpg",
+        "serviceName": "Camper Van Service",
+        "serviceDescription": "Camper Van Service: Explore the great outdoors with our comfortable and versatile camper van rentals",
+        "serviceProviderImage": "https://i.ibb.co/4Rrhq8S/christian-buehner-DIt-Ylc26z-VI-unsplash-1.jpg",
+        "serviceProviderName": "Swift Rentals",
+        "servicePrice": "$40/day"
+      },
+    {
+        "serviceImage": "https://i.ibb.co/MpZjQKj/Honda-Navi-9.jpg",
+        "serviceName": "Bike Service",
+        "serviceDescription": "Navigate the city easily with our efficient and eco-friendly bike rental services, providing a convenient way to get around",
+        "serviceProviderImage": "https://i.ibb.co/2gxmJYD/ali-morshedlou-WMD64t-Mfc4k-unsplash.jpg",
+        "serviceProviderName": "Swift Rentals",
+        "servicePrice": "$40/day"
+      },
+    {
+      "serviceImage": "https://i.ibb.co/rvftQw2/img-milestones-2005-02.jpg",
+      "serviceName": "Non AC Bus Service",
+      "serviceDescription": "Travel affordably and efficiently with our non-air-conditioned bus services, perfect for various transportation needs.",
+      "serviceProviderImage": "https://i.ibb.co/wgppJzQ/irene-strong-v2a-Knj-Mb-P-k-unsplash.jpg",
+      "serviceProviderName": "Group Getaways",
+      "servicePrice": "$80/day"
+    },
+    {
+      "serviceImage": "https://i.ibb.co/TYscX1S/ferrari-purosangue-2023-fuego-by-dmc.jpg",
+      "serviceName": "Privet Car Service",
+      "serviceDescription": "Experience personalized and comfortable travel with our private car services, ensuring convenience and luxury for your journeys.",
+      "serviceProviderImage": "https://i.ibb.co/BVN92Dh/jeffrey-keenan-p-Uhxo-Sap-PFA-unsplash.jpg",
+      "serviceProviderName": "Velocity Rides",
+      "servicePrice": "$300/day"
+    },
+    {
+      "serviceImage": "https://i.ibb.co/YRMJ2RD/download-1.jpg",
+      "serviceName": "Mini Truck Service",
+      "serviceDescription": "Move your cargo with ease using our reliable and sturdy truck rental services for all your transportation and logistics needs",
+      "serviceProviderImage": "https://i.ibb.co/fxLRb4F/linkedin-sales-solutions-p-At-A8xe-i-VM-unsplash.jpg",
+      "serviceProviderName": "Sunset Drives",
+      "servicePrice": "$150/day"
+    },
+    {
+      "serviceImage": "https://i.ibb.co/c1WW3BN/212-2126932-t-king-neptune-d-hd-png-download.jpg",
+      "serviceName": "Mediam Truck Service",
+      "serviceDescription": "Move your cargo with ease using our reliable and sturdy truck rental services for all your transportation and logistics needs",
+      "serviceProviderImage": "https://i.ibb.co/zbfDYNL/meritt-thomas-0o-Refid-SNKc-unsplash.jpg",
+      "serviceProviderName": "Endurance Wheels",
+      "servicePrice": "$350/month"
+    },
+    {
+      "serviceImage": "https://i.ibb.co/YPzx0BR/20200323-01-ogp.jpg",
+      "serviceName": "Large Truck Service",
+      "serviceDescription": "Move your cargo with ease using our reliable and sturdy truck rental services for all your transportation and logistics needs",
+      "serviceProviderImage": "https://i.ibb.co/RYnB3bw/romina-farias-Bs-Z71j4i-m4-unsplash.jpg",
+      "serviceProviderName": "Family Travels",
+      "servicePrice": "$70/day"
+    },
+    {
+      "serviceImage": "https://i.ibb.co/dbGPrMS/Hiace-12-15-Exterior-01-width-1920.jpg",
+      "serviceName": "Micro Bus Service",
+      "serviceDescription": "Travel in small groups comfortably and efficiently with our microbus rental services, catering to various transportation requirements.",
+      "serviceProviderImage": "https://i.ibb.co/0Jjs0BM/sigmund-a19-OVaa2rz-A-unsplash-1.jpg",
+      "serviceProviderName": "Airport Wheels",
+      "servicePrice": "$50/ride"
+    }
+  ]
+  

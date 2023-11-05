@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.card{
+    margin: 30px 0 30px 0;
+}
+.vehicleImg{
+    width: 200px;
+    height: 100%;
+}
