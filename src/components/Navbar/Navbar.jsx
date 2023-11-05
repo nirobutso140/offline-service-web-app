@@ -1,15 +1,25 @@
 import { Link, NavLink } from "react-router-dom";
 import './Navbar.css'
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 
 const Navbar = () => {
 
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => console.log("logout successfully"))
+            .catch(error => console.error(error))
+    }
+ 
 
     return (
         <>
             <div className="navbar">
-                  <img className="nav_logo" src="https://images-platform.99static.com//CGfKzXCgtFF_mqb6y5mE_5y-dAk=/189x13:797x621/fit-in/500x500/99designs-contests-attachments/129/129415/attachment_129415276" alt="" />
+                  <img className="nav_logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3rjWP8P1tCbbGPiVIct07nXXo219cJYyJww&usqp=CAU" alt="" />
                 <div className="links">
                     <li><NavLink to='/'
                         className={({ isActive, isPending }) =>
@@ -43,15 +53,16 @@ const Navbar = () => {
                 <div className="userInfo_logout">
                 {
                        
-                           
-                                // <span>{user.email}</span>
-                                // <span>{user.name}</span>
-                                // <button onClick={handleLogOut} className="btn btn-sm">Log out</button>
-                           
-                            
-                            <Link to='/login'>
-                                <button className="btn btn-sm">Log in</button>
-                            </Link>
+                       user ?
+                       <>
+                           <span>{user.email}</span>
+                           <span>{user.name}</span>
+                           <button onClick={handleLogOut} className="btn btn-sm">Log out</button>
+                       </>
+                       :
+                       <Link to='/login'>
+                           <button className="btn btn-sm">Log in</button>
+                       </Link>
                     }
                 </div>
             </div>

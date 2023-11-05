@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@100;200;300&family=Lato:wght@400;700;900&family=Manrope:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;700;900&family=Work+Sans:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@100;200;300&family=Josefin+Sans:wght@400;500;600;700&family=Lato:wght@400;700;900&family=Manrope:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;700;900&family=Work+Sans:wght@400;500;600;700;800;900&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.banner{
+    background-image: linear-gradient( 111.4deg,  rgba(7,7,9,0.5) 6.5%, rgba(27,24,113,0.6) 93.2% ), url(/image/banner.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 120vh;
+    background-position: center;
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+ 
+}
+.banner_title{
+    color: white;
+    font-size: 4rem;
+    
+
+}
+.banner_desc{
+    color: rgb(169, 169, 190);
+    font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .banner_title{
+        font-size: 3rem;
+    }
+    .banner_desc{
+        font-size: 1rem;
+    }
+  }
+@media only screen and (max-width: 600px) {
+    .banner_title{
+        font-size: 1.8rem;
+    }
+    .banner_desc{
+        font-size: 0.8rem;
+    }
+  }
+
+
+  /* for loading */
+  .loading{
+    display: block;
+    margin: auto;
+  }
