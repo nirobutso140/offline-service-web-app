@@ -1,0 +1,9 @@
+.details_container{
+    display: flex;
+    justify-content: center;
+    
+}
+.provider{
+    height: 300px;
+    overflow-y: scroll;
+}

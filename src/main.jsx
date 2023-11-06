@@ -11,6 +11,7 @@ import Register from './Pages/Register/Register';
 import Login from './Pages/Login/Login';
 import AuthProvider from './providers/AuthProvider';
 import AllService from './components/AllService/AllService';
+import Details from './components/Details/Details';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
       {
         path: "/AllService",
         element: <AllService/>,
+      },
+      {
+        path: "/details/:id",
+        loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`),
+        element: <Details/>,
       },
     ],
   },
