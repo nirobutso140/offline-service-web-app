@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
-import './Services.css'
 import { Link } from 'react-router-dom';
+import './AllService.css'
+import { useEffect, useState } from "react";
 
-const Services = () => {
+
+const AllService = () => {
     const [services, setServices] = useState([])
 
     useEffect(() => {
@@ -10,13 +11,12 @@ const Services = () => {
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
-
     return (
         <>
-            <p className='text-center title'>Popular Service</p>
-            <div className='container'>
+        <p className='text-center title'>All Services</p>
+            <div className='AllServices'>
                 {
-                    services.slice(0,4).map(service => <>
+                    services.map(service => <>
                         <div className="card card-side bg-base-100 shadow-xl">
                             <figure><img className='vehicleImg' src={service.serviceImage} alt="Movie" /></figure>
                             <div className="card-body">
@@ -28,18 +28,15 @@ const Services = () => {
                                     <p>{service.serviceProviderName}</p>
                                 </div>
                                 <div className="card-actions justify-end">
-                                <button className="btn">Details</button>
+                                <Link to={`/details/${service._id}`}><button className="btn">Details</button></Link>
                                 </div>
                             </div>
                         </div>
                     </>)
                 }
             </div>
-           <div className='text-center'>
-            <Link to="/AllService"><button className="btn btn-outline btn-secondary">Show All</button></Link>
-           </div>
         </>
     );
 };
 
-export default Services;
+export default AllService;
