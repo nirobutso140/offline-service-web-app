@@ -15,6 +15,7 @@ import Details from './components/Details/Details';
 import Error from './components/Error/Error';
 import AddService from './components/AddService/AddService';
 import Manage from './Pages/ManageService/Manage';
+import PrivetRoute from './PrivetRoutes/PrivetRoute';
 
 const router = createBrowserRouter([
   {
@@ -40,12 +41,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/addservice",
-        element: <AddService/>,
+        element: <PrivetRoute><AddService/></PrivetRoute>,
       },
       {
         path: "/manage",
         loader: () => fetch('http://localhost:5000/readAddedService'),
-        element: <Manage/>,
+        element: <PrivetRoute><Manage/></PrivetRoute>,
       },
       {
         path: "/details/:id",
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <AuthProvider>
+    <AuthProvider>
     <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>,
