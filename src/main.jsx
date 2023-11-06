@@ -14,6 +14,7 @@ import AllService from './components/AllService/AllService';
 import Details from './components/Details/Details';
 import Error from './components/Error/Error';
 import AddService from './components/AddService/AddService';
+import Manage from './Pages/ManageService/Manage';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
       {
         path: "/addservice",
         element: <AddService/>,
+      },
+      {
+        path: "/manage",
+        loader: () => fetch('http://localhost:5000/readAddedService'),
+        element: <Manage/>,
       },
       {
         path: "/details/:id",

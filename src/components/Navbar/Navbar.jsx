@@ -33,11 +33,11 @@ const Navbar = () => {
                                     isPending ? "pending" : isActive ? "text-red-400 " : ""
                                 }
                             >Add Service</NavLink></li>
-                            <li><NavLink to='/mycart'
+                            <li><NavLink to='/manage'
                                 className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "text-red-400 " : ""
                                 }
-                            >My Cart</NavLink></li>
+                            >Manage Service</NavLink></li>
                     
                     <li> <NavLink to='/login'
                         className={({ isActive, isPending }) =>
