@@ -1,9 +1,30 @@
 .details_container{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     
 }
 .provider{
     height: 300px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
+/* For Chrome, Safari, and Opera */
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  

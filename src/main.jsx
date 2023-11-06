@@ -13,6 +13,7 @@ import AuthProvider from './providers/AuthProvider';
 import AllService from './components/AllService/AllService';
 import Details from './components/Details/Details';
 import Error from './components/Error/Error';
+import AddService from './components/AddService/AddService';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/AllService",
         element: <AllService/>,
+      },
+      {
+        path: "/addservice",
+        element: <AddService/>,
       },
       {
         path: "/details/:id",
