@@ -70,8 +70,8 @@ const Details = () => {
                             <button className="btn" onClick={() => document.getElementById('my_modal_1').showModal()}>Book Now</button>
                             <dialog id="my_modal_1" className="modal">
                                 <div className="modal-box">
-                                    <h3 className="font-bold text-lg">Hello!</h3>
-                                    <p className="py-4">Press ESC key or click the button below to close</p>
+                                    <h3 className="font-bold text-lg">Book Your Service Now</h3>
+                                    <p className="py-4">Discover hassle-free booking and enjoy a seamless experience with our user-friendly online service.</p>
                                     <form onSubmit={handleBookNow}>
                                       <input type="text" name='name' placeholder="Service Name" className="input book input-bordered w-full" defaultValue={detailsInfo.serviceName} readOnly/>
                                       <input type="text" name='photo' placeholder="Service Image" className="input book input-bordered w-full" defaultValue={detailsInfo.serviceImage} readOnly/>

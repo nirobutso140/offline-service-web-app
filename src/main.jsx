@@ -16,6 +16,7 @@ import Error from './components/Error/Error';
 import AddService from './components/AddService/AddService';
 import Manage from './Pages/ManageService/Manage';
 import PrivetRoute from './PrivetRoutes/PrivetRoute';
+import MySchedules from './Pages/MySchedules/MySchedules';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
         path: "/manage",
         loader: () => fetch('http://localhost:5000/readAddedService'),
         element: <PrivetRoute><Manage/></PrivetRoute>,
+      },
+      {
+        path: "/myschedules",
+        loader: () => fetch('http://localhost:5000/readBookService'),
+        element: <PrivetRoute><MySchedules/></PrivetRoute>,
       },
       {
         path: "/details/:id",
