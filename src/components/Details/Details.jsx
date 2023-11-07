@@ -1,14 +1,55 @@
 import { useLoaderData } from 'react-router-dom';
 import './Details.css'
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
+import swal from 'sweetalert';
 
 
 const Details = () => {
+    const {user} = useContext(AuthContext)
     const detailsInfo = useLoaderData()
+
+    const handleBookNow = (event) =>{
+        event.preventDefault();
+
+        const form = event.target;
+
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const providerEmail = form.providerEmail.value;
+        const userEmail = form.userEmail.value;
+        const date = form.date.value;
+        const address = form.address.value;
+        const price = form.price.value
+
+        const bookService = { name, photo, providerEmail, userEmail, date, address, price }
+
+        console.log(bookService);
+
+        //send data to the server
+        fetch('http://localhost:5000/bookService', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bookService)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.insertedId){
+                    swal("Good job!", " Your Service Booked Successfully!", "success");
+                    // form.reset()
+                }
+            })
+    }
+
     return (
         <>
             <div className='details_container'>
                 <div className="provider card w-96 bg-neutral text-neutral-content">
                     <div className="card-body items-center text-center">
+                        <img className='provider_image' src={detailsInfo.serviceProviderImage} alt="" />
                         <h2 className="card-title">Service Provider: {detailsInfo.serviceProviderName}</h2>
                         <p>Address: {detailsInfo.Address}</p>
                         <p>{detailsInfo.ServiceProviderDesc}</p>
@@ -31,9 +72,18 @@ const Details = () => {
                                 <div className="modal-box">
                                     <h3 className="font-bold text-lg">Hello!</h3>
                                     <p className="py-4">Press ESC key or click the button below to close</p>
+                                    <form onSubmit={handleBookNow}>
+                                      <input type="text" name='name' placeholder="Service Name" className="input book input-bordered w-full" defaultValue={detailsInfo.serviceName} readOnly/>
+                                      <input type="text" name='photo' placeholder="Service Image" className="input book input-bordered w-full" defaultValue={detailsInfo.serviceImage} readOnly/>
+                                      <input type="text" name='providerEmail' placeholder=" Service Provider Email" className="input book input-bordered w-full" defaultValue={user?.email} readOnly/>
+                                      <input type="text" name='userEmail' placeholder="User Email" className="input book input-bordered w-full" defaultValue={user?.email} readOnly/>
+                                      <input type="date" name='date' placeholder=" Service Taking Date" className="input book input-bordered w-full" />
+                                      <input type="text" name='address' placeholder="Address" className="input book input-bordered w-full" />
+                                      <input type="text" name='price' placeholder="Price" className="input book input-bordered w-full" defaultValue={detailsInfo.servicePrice} readOnly/>
+                                      <input type="submit" value="Book Now" className="btn btn-block book" />
+                                    </form>
                                     <div className="modal-action">
                                         <form method="dialog">
-                                            {/* if there is a button in form, it will close the modal */}
                                             <button className="btn">Close</button>
                                         </form>
                                     </div>

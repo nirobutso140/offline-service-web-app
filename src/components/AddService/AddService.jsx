@@ -17,9 +17,10 @@ const AddService = () => {
         const price = form.price.value;
         const area = form.area.value;
         const description = form.description.value;
+        const providerPhoto = form.providerPhoto.value
         const photo = form.photo.value;
 
-        const addService = { service, name, email, price, area, description, photo }
+        const addService = { service, name, email, price, area, description, photo, providerPhoto }
 
         console.log(addService);
 
@@ -61,7 +62,7 @@ const AddService = () => {
                                 <span className="label-text">Your Name</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="name" placeholder="Your Name" className="input input-bordered w-full" defaultValue={user?.displayName} disabled/>
+                                <input type="text" name="name" placeholder="Your Name" className="input input-bordered w-full" defaultValue={user?.displayName} readOnly/>
                             </label>
                         </div>
                     </div>
@@ -72,7 +73,7 @@ const AddService = () => {
                                 <span className="label-text">Your Email</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="email" placeholder="Your Email" className="input input-bordered w-full" defaultValue={user?.email} disabled/>
+                                <input type="text" name="email" placeholder="Your Email" className="input input-bordered w-full" defaultValue={user?.email} readOnly/>
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 ml-4">
@@ -104,7 +105,15 @@ const AddService = () => {
                         </div>
                     </div>
                     {/* form Photo url row */}
-                    <div className="mb-8">
+                    <div className="md:flex mb-8">
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text">Service Provider Photo</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="providerPhoto" placeholder="Provider Photo URL" className="input input-bordered w-full" defaultValue={user?.photoURL} readOnly/>
+                            </label>
+                        </div>
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Service Photo URL</span>
@@ -114,6 +123,7 @@ const AddService = () => {
                             </label>
                         </div>
                     </div>
+                    
                     <input type="submit" value="Add Service" className="btn btn-block" />
 
                 </form>

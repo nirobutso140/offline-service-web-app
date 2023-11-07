@@ -7,6 +7,9 @@
     height: 300px;
     overflow-y: auto;
 }
+.book{
+  margin-bottom: 10px;
+}
 /* For Chrome, Safari, and Opera */
 /* width */
 ::-webkit-scrollbar {
