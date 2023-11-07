@@ -1,13 +1,40 @@
 import { Link, useLoaderData } from 'react-router-dom';
 import './Manage.css'
+import swal from 'sweetalert';
+import { useState } from 'react';
 
 const Manage = () => {
     const manageService = useLoaderData()
+    const [service, setService] = useState(manageService)
+
+    const handleDelete = (id) =>{
+         const process = swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            // buttons: true,
+            dangerMode: true,
+          })
+
+          if(process){
+            fetch(`http://localhost:5000/deleteService/${id}`, {
+                method: "DELETE",
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                console.log(data);
+                if(data.deletedCount > 0)
+                swal("Good job!", "Deleted Product Successfully", "success");
+                const remainding = service.filter(item => item._id !== id)
+                setService(remainding)
+              });
+          }
+    }
     return (
         <>
             <div className='AllServices'>
                 {
-                    manageService.map(manage => <>
+                    service.map(manage => <>
                         <div className="card card-side bg-base-100 shadow-xl">
                             <figure><img className='vehicleImg' src={manage.photo} alt="Movie" /></figure>
                             <div className="card-body">
@@ -22,7 +49,7 @@ const Manage = () => {
                                     <p>{manage.serviceProviderName}</p>
                                 </div>
                                 <div className="card-actions justify-end">
-                                    <Link><button className="btn btn-error">Delete</button></Link>
+                                    <Link><button onClick={()=>handleDelete(manage._id)} className="btn btn-error">Delete</button></Link>
                                     <Link><button className="btn">Edit</button></Link>
                                 </div>
                             </div>
