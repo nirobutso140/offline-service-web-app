@@ -1,75 +1,68 @@
 // import { useLoaderData } from 'react-router-dom';
-import { useContext, useEffect, useState} from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './MySchedules.css'
 import { AuthContext } from '../../providers/AuthProvider';
+import BookingRow from './BookingRow';
 const MySchedules = () => {
     const [book, setBook] = useState([])
-    const {user} = useContext(AuthContext) 
+    const [bookings, setBookings] = useState([]);
+    const { user } = useContext(AuthContext)
     const uri = `http://localhost:5000/readBookService/${user?.email}`
-    useEffect(()=>{
+    useEffect(() => {
         fetch(uri)
-        .then(res => res.json())
-        .then(data => setBook(data))
+            .then(res => res.json())
+            .then(data => setBook(data))
     }, [uri])
     // const mySchedules = useLoaderData()
+  
+    const handleBookingConfirm = id =>{
+          fetch(`http://localhost:5000/status/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ status: 'confirm' })
+          })
+          .then(res => res.json())
+          .then(data =>{
+              console.log(data);
+              if(data.modifiedCount > 0){
+                const remaining = bookings.filter(booking => booking._id !== id);
+                    const updated = bookings.find(booking => booking._id === id);
+                    updated.status = 'confirm'
+                    const newBookings = [updated, ...remaining];
+                    setBookings(newBookings);
+              }
+          })
+    }
 
     return (
         <>
             <div className='mySchedules_conatiner'>
                 <table className="table">
-                    <thead>
+                <thead>
                         <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
-                            <th>Service Name</th>
+                            <th>Image</th>
+                            <th>Service</th>
+                            <th>Date</th>
                             <th>Price</th>
-                            <th>My Schedules</th>
-                            <th></th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                 </table>
-                {
-                    book.map(Schedule => <>
-                        <div className="overflow-x-auto">
-                            <table className="table">
-                                {/* head */}
-                                <tbody>
 
-                                    <tr>
-                                        <th>
-                                            <label>
-                                                <input type="checkbox" className="checkbox" />
-                                            </label>
-                                        </th>
-                                        <td>
-                                            <div className="flex items-center space-x-3">
-                                                <div className="avatar">
-                                                    <div className="mask mask-squircle w-12 h-12">
-                                                        <img src={Schedule.photo} alt="Avatar Tailwind CSS Component" />
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div className="font-bold">{Schedule.name}</div>
-                                                    <div className="text-sm opacity-50">{Schedule.address}</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            {Schedule.price}
-                                        </td>
-                                        <td>{Schedule.date}</td>
-                                        <th>
-                                            <button className="btn btn-ghost btn-xs">details</button>
-                                        </th>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </>)
-                }
+
+                <div className="overflow-x-auto">
+                    <table className="table">
+                        {/* head */}
+                        <tbody>
+                            {
+                                book.map(booking => <BookingRow key={booking._id} booking={booking} handleBookingConfirm={handleBookingConfirm}/>)
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </>
     );
