@@ -1,3 +1,11 @@
+# TripLink Vehicle Service Project
+
+1. Different types of vehicles can be rented through this website.
+2. The website will have various types of vehicle services, users can rent any type of vehicle.
+3. The user can access the services if he/she is logged in.
+4. Users can add services according to their choice.
+5. Users can delete and edit their added services.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
