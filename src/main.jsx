@@ -17,6 +17,7 @@ import AddService from './components/AddService/AddService';
 import Manage from './Pages/ManageService/Manage';
 import PrivetRoute from './PrivetRoutes/PrivetRoute';
 import MySchedules from './Pages/MySchedules/MySchedules';
+import Edit from './components/Edit/Edit';
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,11 @@ const router = createBrowserRouter([
         loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`),
         element: <PrivetRoute><Details/></PrivetRoute>,
       },
+      {
+        path: "/edit/:id",
+        loader: ({params}) => fetch(`http://localhost:5000/edit/${params.id}`),
+        element: <Edit/>
+      }
     ],
   },
 ]);

@@ -7,7 +7,7 @@ const MySchedules = () => {
     return (
         <>
             <div className='mySchedules_conatiner'>
-                <table className="table">
+                {/* <table className="table">
                     <thead>
                         <tr>
                             <th>
@@ -15,13 +15,13 @@ const MySchedules = () => {
                                     <input type="checkbox" className="checkbox" />
                                 </label>
                             </th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Service Name</th>
+                            <th>Price</th>
+                            <th>My Schedules</th>
                             <th></th>
                         </tr>
                     </thead>
-                </table>
+                </table> */}
                 {
                     mySchedules.map(Schedule => <>
                         <div className="overflow-x-auto">
@@ -43,17 +43,15 @@ const MySchedules = () => {
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <div className="font-bold">Yancy Tear</div>
-                                                    <div className="text-sm opacity-50">Brazil</div>
+                                                    <div className="font-bold">{Schedule.name}</div>
+                                                    <div className="text-sm opacity-50">{Schedule.address}</div>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
-                                            Wyman-Ledner
-                                            <br />
-                                            <span className="badge badge-ghost badge-sm">Community Outreach Specialist</span>
+                                            {Schedule.price}
                                         </td>
-                                        <td>Indigo</td>
+                                        <td>{Schedule.date}</td>
                                         <th>
                                             <button className="btn btn-ghost btn-xs">details</button>
                                         </th>
