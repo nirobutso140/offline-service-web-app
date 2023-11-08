@@ -1,4 +1,4 @@
-import React from 'react'
+
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import {
@@ -9,7 +9,6 @@ import Layout from './Pages/Layout/Layout';
 import Home from './Pages/Home/Home';
 import Register from './Pages/Register/Register';
 import Login from './Pages/Login/Login';
-import AuthProvider from './providers/AuthProvider';
 import AllService from './components/AllService/AllService';
 import Details from './components/Details/Details';
 import Error from './components/Error/Error';
@@ -18,8 +17,14 @@ import Manage from './Pages/ManageService/Manage';
 import PrivetRoute from './PrivetRoutes/PrivetRoute';
 import MySchedules from './Pages/MySchedules/MySchedules';
 import Edit from './components/Edit/Edit';
+import AuthProvider from './providers/AuthProvider';
+import React from 'react';
+
+
+
 
 const router = createBrowserRouter([
+ 
   {
     path: "/",
     element: <Layout/>,
@@ -52,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/myschedules",
-        loader: () => fetch('http://localhost:5000/readBookService'),
+        // loader: () => fetch('http://localhost:5000/readBookService'),
         element: <PrivetRoute><MySchedules/></PrivetRoute>,
       },
       {
