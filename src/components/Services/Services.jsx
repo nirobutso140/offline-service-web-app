@@ -1,9 +1,17 @@
 import { useEffect, useState } from 'react';
 import './Services.css'
 import { Link } from 'react-router-dom';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 const Services = () => {
     const [services, setServices] = useState([])
+
+    useEffect(() => {
+        AOS.init({
+          duration: 2000,
+          once: false,
+        });
+      }, []);
 
     useEffect(() => {
         fetch('https://offline-servicesharing-app-server.vercel.app/services')
@@ -17,7 +25,7 @@ const Services = () => {
             <div className='container'>
                 {
                     services.slice(0,4).map(service => <>
-                        <div className="card card-side bg-base-100 shadow-xl">
+                        <div data-aos={service.animationType} className="card card-side bg-base-100 shadow-xl">
                             <figure><img className='vehicleImg' src={service.serviceImage} alt="Movie" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">{service.serviceName}</h2>
