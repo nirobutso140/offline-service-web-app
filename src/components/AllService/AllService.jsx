@@ -20,7 +20,7 @@ const AllService = () => {
         <p className='text-center title'>All Services</p>
             <div className='AllServices'>
                 {
-                    services.map(service => <>
+                    services.slice(0,6).map(service => <>
                         <div className="card card-side bg-base-100 shadow-xl">
                             <figure><img className='vehicleImg' src={service.serviceImage} alt="Movie" /></figure>
                             <div className="card-body">
