@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import './Error.css'
+import { useEffect } from 'react';
 const Error = () => {
+    useEffect(() => {
+        document.title = 'TripLink 404 Page not found';
+      }, []);
     return (
         <>
             <section className="page_404">

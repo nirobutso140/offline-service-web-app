@@ -21,10 +21,10 @@ const Pricing = () => {
                         <div className="ptable-body">
                             <div className="ptable-description">
                                 <ul>
-                                    <li>Pure HTML & CSS</li>
-                                    <li>Responsive Design</li>
-                                    <li>Well-commented Code</li>
-                                    <li>Easy to Use</li>
+                                    <li>Standard mileage limit</li>
+                                    <li>Basic insurance coverage</li>
+                                    <li>Limited vehicle options</li>
+                                    <li>Standard customer support</li>
                                 </ul>
                             </div>
                         </div>
@@ -52,10 +52,10 @@ const Pricing = () => {
                         <div className="ptable-body">
                             <div className="ptable-description">
                                 <ul>
-                                    <li>Pure HTML & CSS</li>
-                                    <li>Responsive Design</li>
-                                    <li>Well-commented Code</li>
-                                    <li>Easy to Use</li>
+                                    <li>Extended mileage limit</li>
+                                    <li>Comprehensive insurance coverage</li>
+                                    <li>Access to a wider range of vehicle models</li>
+                                    <li>Priority customer support</li>
                                 </ul>
                             </div>
                         </div>
@@ -80,10 +80,11 @@ const Pricing = () => {
                         <div className="ptable-body">
                             <div className="ptable-description">
                                 <ul>
-                                    <li>Pure HTML & CSS</li>
-                                    <li>Responsive Design</li>
-                                    <li>Well-commented Code</li>
-                                    <li>Easy to Use</li>
+                                    <li>Unlimited mileage</li>
+                                    <li>Premium insurance coverage with additional features</li>
+                                    <li>Access to luxury or specialty vehicles</li>
+                                    <li>24/7 dedicated customer support</li>
+                                    <li>Additional perks such as vehicle delivery and pickup services</li>
                                 </ul>
                             </div>
                         </div>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import About from "../../components/About/About";
 import Banner from "../../components/Banner/Banner";
 import Customer from "../../components/Customer/Customer";
@@ -6,6 +7,9 @@ import Services from "../../components/Services/Services";
 
 
 const Home = () => {
+    useEffect(() => {
+        document.title = 'TripLink Home';
+      }, []);
     return (
         <>
             <Banner/>

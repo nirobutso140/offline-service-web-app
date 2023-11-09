@@ -1,11 +1,15 @@
 import { Link, useLoaderData } from 'react-router-dom';
 import './Manage.css'
 import swal from 'sweetalert';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // import { useContext, useState } from 'react';
 // import { AuthContext } from '../../providers/AuthProvider';
 
 const Manage = () => {
+
+    useEffect(() => {
+        document.title = 'TripLink Manage Service';
+      }, []);
     // const { user } = useContext(AuthContext)
     const manageService = useLoaderData()
     console.log(manageService);
@@ -22,7 +26,7 @@ const Manage = () => {
         })
 
         if (process) {
-            fetch(`http://localhost:5000/deleteService/${id}`, {
+            fetch(`https://offline-servicesharing-app-server.vercel.app/deleteService/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
@@ -35,62 +39,6 @@ const Manage = () => {
                 });
         }
     }
-
-    // const handleUpdate = (e) => {
-    //     e.preventDefault()
-    //     const form = e.target;
-    //     const serviceName = form.serviceName.value;
-    //     const name = form.name.value;
-    //     const email = form.email.value;
-    //     const area = form.area.value;
-    //     const price = form.price.value;
-    //     const description = form.description.value;
-    //     const photo = form.photo.value
-    //     const editService = { serviceName, name, email, area, price, description, photo }
-
-    //     fetch(`http://localhost:5000/update/${service._id}`, {
-    //         method: "PUT",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify(editService),
-    //     })
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             console.log(data);
-    //             if(data.modifiedCount > 0){
-    //                 swal("Good job!", "You update the service!", "success");
-    //             }
-    //         });
-    // }
-
-
-
-// Open the modal using document.getElementById('ID').showModal() method */}
-// <button className="btn" onClick={() => document.getElementById('my_modal_1').showModal()}>Edit</button>
-// <dialog id="my_modal_1" className="modal">
-//     <div className="modal-box">
-//         <h3 className="font-bold text-lg">Book Your Service Now</h3>
-//         <p className="py-4">Discover hassle-free booking and enjoy a seamless experience with our user-friendly online service.</p>
-//         <form onSubmit={handleUpdate}>
-//             <input type="text" name='serviceName' placeholder="Service Name" className="input book input-bordered w-full" />
-//             <input type="text" name='name' placeholder="Name" className="input book input-bordered w-full" defaultValue={user?.name} readOnly />
-//             <input type="text" name='email' placeholder="Email" className="input book input-bordered w-full" defaultValue={user?.email} readOnly />
-//             <input type="text" name='area' placeholder="Service Area" className="input book input-bordered w-full" />
-//             <input type="date" name='price' placeholder="Price" className="input book input-bordered w-full" />
-//             <input type="text" name='description' placeholder="Description" className="input book input-bordered w-full" />
-//             <input type="text" name='photo' placeholder="Service Photo URL" className="input book input-bordered w-full" />
-//             <input type="submit" value="Edit" className="btn btn-block book" />
-//         </form>
-//         <div className="modal-action">
-//             <form method="dialog">
-//                 {/* if there is a button in form, it will close the modal */}
-//                 <button className="btn">Close</button>
-//             </form>
-//         </div>
-//     </div>
-// </dialog> 
-
 
 
     return (

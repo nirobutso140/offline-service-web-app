@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
 import {  useNavigate } from 'react-router-dom';
@@ -6,6 +6,11 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Register = () => {
+
+    useEffect(() => {
+        document.title = 'TripLink Register';
+      }, []);
+
     const [registerError, setRegisterError] = useState('')
     const [success, setSuccess] = useState('')
     const {createUser} = useContext(AuthContext)

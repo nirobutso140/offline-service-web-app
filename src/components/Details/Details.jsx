@@ -1,11 +1,14 @@
 import { useLoaderData } from 'react-router-dom';
 import './Details.css'
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import swal from 'sweetalert';
 
 
 const Details = () => {
+    useEffect(() => {
+        document.title = 'TripLink Details';
+      }, []);
     const {user} = useContext(AuthContext)
     const detailsInfo = useLoaderData()
 
@@ -27,7 +30,7 @@ const Details = () => {
         console.log(bookService);
 
         //send data to the server
-        fetch('http://localhost:5000/bookService', {
+        fetch('https://offline-servicesharing-app-server.vercel.app/bookService', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

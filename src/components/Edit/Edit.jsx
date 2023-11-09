@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import swal from "sweetalert";
 import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Edit = () => {
+    useEffect(() => {
+        document.title = 'TripLink Update Service';
+      }, []);
     const {user} = useContext(AuthContext)
     console.log(user);
     const singleServiceData = useLoaderData()
@@ -23,7 +26,7 @@ const Edit = () => {
         const photo = form.photo.value
         const editService = { serviceName, name, email, area, price, description, photo }
 
-        fetch(`http://localhost:5000/update/${singleServiceData._id}`, {
+        fetch(`https://offline-servicesharing-app-server.vercel.app/update/${singleServiceData._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

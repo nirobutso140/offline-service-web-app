@@ -1,12 +1,20 @@
 import swal from 'sweetalert';
 import './AddService.css'
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 const AddService = () => {
+
+    useEffect(() => {
+        document.title = 'TripLink Add Service';
+      }, []);
+
     const {user} = useContext(AuthContext)
     console.log(user);
 
     const handleAddProduct = event => {
+
+      
+
         event.preventDefault();
 
         const form = event.target;
@@ -25,7 +33,7 @@ const AddService = () => {
         console.log(addService);
 
         //send data to the server
-        fetch('http://localhost:5000/addService', {
+        fetch('https://offline-servicesharing-app-server.vercel.app/addService', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
