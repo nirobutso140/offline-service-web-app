@@ -30,7 +30,7 @@ const Details = () => {
         console.log(bookService);
 
         //send data to the server
-        fetch('https://offline-servicesharing-app-server.vercel.app/bookService', {
+        fetch('http://localhost:5000/bookService', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,18 +50,18 @@ const Details = () => {
     return (
         <>
             <div className='details_container'>
-                <div className="provider card w-96 bg-neutral text-neutral-content">
+                <div className="provider card w-96  text-neutral-content">
                     <div className="card-body items-center text-center">
-                        <img className='provider_image' src={detailsInfo.serviceProviderImage} alt="" />
-                        <h2 className="card-title">Service Provider: {detailsInfo.serviceProviderName}</h2>
+                        <img className='provider_image border border-white border-2' src={detailsInfo.serviceProviderImage} alt="" />
+                        <h2 className="card-title text-fuchsia-500">Service Provider: {detailsInfo.serviceProviderName}</h2>
                         <p>Address: {detailsInfo.Address}</p>
                         <p>{detailsInfo.ServiceProviderDesc}</p>
                     </div>
                 </div>
-                <div className="card w-96 glass">
+                <div className="card w-96 ">
                     <figure><img src={detailsInfo.serviceImage} alt="car!" /></figure>
                     <div className="card-body">
-                        <h2 className="card-title">{detailsInfo.serviceName}</h2>
+                        <h2 className="card-title text-fuchsia-500">{detailsInfo.serviceName}</h2>
                         <p>{detailsInfo.serviceDescription}</p>
                         <p>Price: {detailsInfo.servicePrice}</p>
                         <div className='service-provider'>

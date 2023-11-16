@@ -33,7 +33,7 @@ const AddService = () => {
         console.log(addService);
 
         //send data to the server
-        fetch('https://offline-servicesharing-app-server.vercel.app/addService', {
+        fetch('http://localhost:5000/addService', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -52,8 +52,8 @@ const AddService = () => {
 
     return (
         <>
-            <div className="bg-[#F4F3F0] p-24">
-                <h2 className="text-3xl font-extrabold">Add Service</h2>
+            <div className=" p-24">
+                <h2 className="text-3xl font-extrabold text-fuchsia-600">Add Service</h2>
                 <form onSubmit={handleAddProduct}>
                     {/* form name and quantity row */}
                     <div className="md:flex mb-8">
@@ -132,7 +132,7 @@ const AddService = () => {
                         </div>
                     </div>
                     
-                    <input type="submit" value="Add Service" className="btn btn-block" />
+                    <input type="submit" value="Add Service" className="btn btn-block btn-secondary bg-fuchsia-600" />
 
                 </form>
             </div>

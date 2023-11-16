@@ -5,16 +5,16 @@ const Banner = () => {
         <>
             <div className="banner">
                <div className="banner_content">
-                    <h1 className='banner_title'>TripLink is <span style={{ color: 'red', fontWeight: 'bold' }}>
+                    <h1 className='banner_title'>TripLink is <span style={{ color: 'pink', fontWeight: 'bold' }}>
                     {/* Style will be inherited from the parent element */}
 
                       <Typewriter
                       words={['Efficient', 'Reliable', 'Professional', 'Trustworthy', 'Convenient']}
-                      loop={5}
+                      loop={10}
                       cursor
                       cursorStyle='🚗'
-                      typeSpeed={70}
-                      deleteSpeed={50}
+                      typeSpeed={100}
+                      deleteSpeed={100}
                       delaySpeed={1000}
                     />
                   </span>

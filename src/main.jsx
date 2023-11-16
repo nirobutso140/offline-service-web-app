@@ -52,22 +52,22 @@ const router = createBrowserRouter([
       },
       {
         path: "/manage",
-        loader: () => fetch('https://offline-servicesharing-app-server.vercel.app/readAddedService'),
+        loader: () => fetch('http://localhost:5000/readAddedService'),
         element: <PrivetRoute><Manage/></PrivetRoute>,
       },
       {
         path: "/myschedules",
-        // loader: () => fetch('https://offline-servicesharing-app-server.vercel.app/readBookService'),
+        // loader: () => fetch('http://localhost:5000/readBookService'),
         element: <PrivetRoute><MySchedules/></PrivetRoute>,
       },
       {
         path: "/details/:id",
-        loader: ({params}) => fetch(`https://offline-servicesharing-app-server.vercel.app/details/${params.id}`),
+        loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`),
         element: <PrivetRoute><Details/></PrivetRoute>,
       },
       {
         path: "/edit/:id",
-        loader: ({params}) => fetch(`https://offline-servicesharing-app-server.vercel.app/edit/${params.id}`),
+        loader: ({params}) => fetch(`http://localhost:5000/edit/${params.id}`),
         element: <Edit/>
       }
     ],

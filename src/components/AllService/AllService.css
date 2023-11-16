@@ -1,9 +1,7 @@
 .AllServices{
     display: grid;
     grid-template-columns: auto auto;
-    place-items: center;
     justify-content: center;
     gap: 30px;
-    margin-left: 100px;
-    margin-right: 100px;
+    
 }

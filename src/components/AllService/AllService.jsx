@@ -11,7 +11,7 @@ const AllService = () => {
       }, []);
 
     useEffect(() => {
-        fetch('https://offline-servicesharing-app-server.vercel.app/services')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
@@ -20,11 +20,11 @@ const AllService = () => {
         <p className='text-center title'>All Services</p>
             <div className='AllServices'>
                 {
-                    services.slice(0,6).map(service => <>
-                        <div className="card card-side bg-base-100 shadow-xl">
+                    services.map(service => <>
+                        <div className="card card-side shadow-xl">
                             <figure><img className='vehicleImg' src={service.serviceImage} alt="Movie" /></figure>
                             <div className="card-body">
-                                <h2 className="card-title">{service.serviceName}</h2>
+                                <h2 className="card-title text-fuchsia-600">{service.serviceName}</h2>
                                 <p className='desc'>{service.serviceDescription}</p>
                                 <p>Price: {service.servicePrice}</p>
                                 <div className='service-provider'>

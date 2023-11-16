@@ -1,9 +1,6 @@
-.container{
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto;
-    justify-content: center;
-    gap: 30px;
+
+body{
+    background-color: #010313;
 }
 .card-body{
     width: 350px;
@@ -17,6 +14,7 @@
 }
 .title{
     font-size: 2rem;
+
 }
 .service-provider{
     display: flex;

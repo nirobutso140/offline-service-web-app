@@ -1,11 +1,15 @@
 .details_container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     
 }
 .provider{
     height: 300px;
     overflow-y: auto;
+}
+.provider_image{
+  width: 70px;
+  height: 70px;
 }
 .book{
   margin-bottom: 10px;

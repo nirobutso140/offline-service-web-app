@@ -26,7 +26,7 @@ const Manage = () => {
         })
 
         if (process) {
-            fetch(`https://offline-servicesharing-app-server.vercel.app/deleteService/${id}`, {
+            fetch(`http://localhost:5000/deleteService/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
@@ -46,10 +46,10 @@ const Manage = () => {
             <div className='AllServices'>
                 {
                     service.map(manage => <>
-                        <div className="card card-side bg-base-100 shadow-xl">
+                        <div className="card card-side  shadow-xl">
                             <figure><img className='vehicleImg' src={manage.photo} alt="Movie" /></figure>
                             <div className="card-body">
-                                <h2 className="card-title">Service: {manage.service}</h2>
+                                <h2 className="card-title text-fuchsia-600">Service: {manage.service}</h2>
                                 <p className='desc'>Name: {manage.name}</p>
                                 <p className='desc'>Email: {manage.email}</p>
                                 <p className='desc'>Service Area: {manage.area}</p>

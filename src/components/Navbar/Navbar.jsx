@@ -20,40 +20,40 @@ const Navbar = () => {
     return (
         <>
             <div className="navbar">
-                <img className="nav_logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3rjWP8P1tCbbGPiVIct07nXXo219cJYyJww&usqp=CAU" alt="" />
+                <img className="nav_logo" src="/image/rsz_attachment_104083548-removebg-preview.png" alt="" />
                 <div className="links">
                     <li><NavLink to='/'
                         className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? "text-red-400 " : ""
+                            isPending ? "pending" : isActive ? "text-fuchsia-600" : ""
                         }
                     >Home</NavLink></li>
 
 
                     <li><NavLink to='/addservice'
                         className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? "text-red-400 " : ""
+                            isPending ? "pending" : isActive ? "text-fuchsia-600" : ""
                         }
                     >Add Service</NavLink></li>
                     <li><NavLink to='/manage'
                         className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? "text-red-400 " : ""
+                            isPending ? "pending" : isActive ? "text-fuchsia-600" : ""
                         }
                     >Manage Service</NavLink></li>
 
                     <li><NavLink to='/myschedules'
                         className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? "text-red-400 " : ""
+                            isPending ? "pending" : isActive ? "text-fuchsia-600" : ""
                         }
                     >My Schedules</NavLink></li>
 
                     <li> <NavLink to='/login'
                         className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? "text-red-400" : ""
+                            isPending ? "pending" : isActive ? "text-fuchsia-600" : ""
                         }
                     >Login</NavLink></li>
                     <li><NavLink to='/register'
                         className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? "text-red-400" : ""
+                            isPending ? "pending" : isActive ? "text-fuchsia-600" : ""
                         }
                     >Register</NavLink></li>
                 </div>
@@ -63,7 +63,7 @@ const Navbar = () => {
                         user ?
                             <>
                                 <span>{user?.displayName}</span>
-                                <button onClick={handleLogOut} className="btn btn-sm">Log out</button>
+                                <button onClick={handleLogOut} className="btn btn-sm btn-secondary">Log out</button>
                             </>
                             :
                             <Link to='/login'>
