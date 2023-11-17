@@ -159,7 +159,7 @@ main {
   object-fit: cover;
   max-width: 100%;
   display: block;
-  box-shadow: 10px 10px 250px #000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .main-text {
