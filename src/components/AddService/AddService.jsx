@@ -33,7 +33,7 @@ const AddService = () => {
         console.log(addService);
 
         //send data to the server
-        fetch('http://localhost:5000/addService', {
+        fetch('https://offline-servicesharing-app-server.vercel.app/addService', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

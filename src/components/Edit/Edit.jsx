@@ -26,7 +26,7 @@ const Edit = () => {
         const photo = form.photo.value
         const editService = { serviceName, name, email, area, price, description, photo }
 
-        fetch(`http://localhost:5000/update/${singleServiceData._id}`, {
+        fetch(`https://offline-servicesharing-app-server.vercel.app/update/${singleServiceData._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

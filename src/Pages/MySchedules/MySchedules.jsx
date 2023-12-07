@@ -12,7 +12,7 @@ const MySchedules = () => {
     const [book, setBook] = useState([])
     const [bookings, setBookings] = useState([]);
     const { user } = useContext(AuthContext)
-    const uri = `http://localhost:5000/readBookService/${user?.email}`
+    const uri = `https://offline-servicesharing-app-server.vercel.app/readBookService/${user?.email}`
     useEffect(() => {
         fetch(uri)
             .then(res => res.json())
@@ -21,7 +21,7 @@ const MySchedules = () => {
     // const mySchedules = useLoaderData()
   
     const handleBookingConfirm = id =>{
-          fetch(`http://localhost:5000/status/${id}`, {
+          fetch(`https://offline-servicesharing-app-server.vercel.app/status/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

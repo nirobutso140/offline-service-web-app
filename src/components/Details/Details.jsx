@@ -30,7 +30,7 @@ const Details = () => {
         console.log(bookService);
 
         //send data to the server
-        fetch('http://localhost:5000/bookService', {
+        fetch('https://offline-servicesharing-app-server.vercel.app/bookService', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

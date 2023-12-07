@@ -26,7 +26,7 @@ const Manage = () => {
         })
 
         if (process) {
-            fetch(`http://localhost:5000/deleteService/${id}`, {
+            fetch(`https://offline-servicesharing-app-server.vercel.app/deleteService/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
