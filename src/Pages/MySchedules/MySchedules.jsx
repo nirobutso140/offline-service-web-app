@@ -43,9 +43,9 @@ const MySchedules = () => {
 
     return (
         <>
-            <div className='mySchedules_conatiner'>
+            <div className='mySchedules_conatiner text-slate-300'>
                 <table className="table">
-                <thead>
+                <thead className='text-white'>
                         <tr>
                             <th>Image</th>
                             <th>Service</th>

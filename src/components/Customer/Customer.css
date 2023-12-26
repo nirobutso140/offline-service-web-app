@@ -16,6 +16,9 @@
     color: rgb(255, 40, 180);
     font-size: 3rem;
 }
+.customer_review{
+    color: rgb(181, 181, 181);
+}
 .customer img{
     width: 380px;
     padding: 0 20px;

@@ -62,19 +62,19 @@ const Details = () => {
                     <figure><img src={detailsInfo.serviceImage} alt="car!" /></figure>
                     <div className="card-body">
                         <h2 className="card-title text-fuchsia-500">{detailsInfo.serviceName}</h2>
-                        <p>{detailsInfo.serviceDescription}</p>
-                        <p>Price: {detailsInfo.servicePrice}</p>
+                        <p className='text-slate-400'>{detailsInfo.serviceDescription}</p>
+                        <p className='text-slate-200'>Price: {detailsInfo.servicePrice}</p>
                         <div className='service-provider'>
                             <img className='provider_image' src={detailsInfo.serviceProviderImage} alt="" />
-                            <p>{detailsInfo.serviceProviderName}</p>
+                            <p className='text-slate-200'>{detailsInfo.serviceProviderName}</p>
                         </div>
                         <div className="card-actions justify-end">
                             {/* Open the modal using document.getElementById('ID').showModal() method */}
                             <button className="btn" onClick={() => document.getElementById('my_modal_1').showModal()}>Book Now</button>
                             <dialog id="my_modal_1" className="modal">
                                 <div className="modal-box">
-                                    <h3 className="font-bold text-lg">Book Your Service Now</h3>
-                                    <p className="py-4">Discover hassle-free booking and enjoy a seamless experience with our user-friendly online service.</p>
+                                    <h3 className="font-bold text-lg text-green-600">Book Your Service Now</h3>
+                                    <p className="py-4 text-slate-600">Discover hassle-free booking and enjoy a seamless experience with our user-friendly online service.</p>
                                     <form onSubmit={handleBookNow}>
                                       <input type="text" name='name' placeholder="Service Name" className="input book input-bordered w-full" defaultValue={detailsInfo.serviceName} readOnly/>
                                       <input type="text" name='photo' placeholder="Service Image" className="input book input-bordered w-full" defaultValue={detailsInfo.serviceImage} readOnly/>

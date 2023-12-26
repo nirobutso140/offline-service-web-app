@@ -22,7 +22,7 @@ const Services = () => {
 
     return (
         <>
-            <p className='text-center title text-pink-700'>Popular Service</p>
+            <p className='text-center title text-emerald-500'>POPULAR SERVICE</p>
             <div className='AllServices'>
                 {
                     services.slice(0,4).map(service => <>
@@ -31,10 +31,10 @@ const Services = () => {
                             <div className="card-body ">
                                 <h2 className="card-title text-fuchsia-500">{service.serviceName}</h2>
                                 <p className='desc '>{service.serviceDescription}</p>
-                                <p>Price: {service.servicePrice}</p>
+                                <p className='text-slate-200'>Price: {service.servicePrice}</p>
                                 <div className='service-provider'>
                                     <img className='provider_image' src={service.serviceProviderImage} alt="" />
-                                    <p>{service.serviceProviderName}</p>
+                                    <p className='text-slate-200'>{service.serviceProviderName}</p>
                                 </div>
                                 <div className="card-actions justify-end">
                                 <Link to={`/details/${service._id}`}><button className="btn">Details</button></Link>

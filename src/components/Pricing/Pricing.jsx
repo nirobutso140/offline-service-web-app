@@ -4,9 +4,8 @@ const Pricing = () => {
     return (
         <>
             <h1 className="demo-title">
-               Service Pricing Table
-                    
-            </h1>
+               SERVICE PRICE SECTION         
+            </h1><br />
             <div className="pricing-table">
                 <div className="ptable-item">
                     <div className="ptable-single">

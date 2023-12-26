@@ -7,14 +7,14 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #ffffff;
+  /* background: #ffffff; */
 }
 
 h1.demo-title {
   text-align: center;
   font-size: 30px;
   font-weight: 600;
-  color: #2A293E;
+  color: #ebebf3;
   letter-spacing: 2px;
 }
 
