@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import {  useNavigate } from 'react-router-dom';
 import { AuthContext } from "../../providers/AuthProvider";
 import './Register.css'
@@ -14,6 +15,8 @@ const Register = () => {
 
     const [registerError, setRegisterError] = useState('')
     const [success, setSuccess] = useState('')
+
+    const [showPass, setShowPass] = useState(false)
     const {createUser} = useContext(AuthContext)
     const navigate = useNavigate()
     
@@ -72,9 +75,19 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
+                                
+                                <div className="pass">
+                                <input type={showPass? "text" : "password"} name="password" placeholder="Password" className="input input-bordered passInput" required />
+                                <span className="eye"  onClick={()=>setShowPass(!showPass)}>
+                                        {
+                                           showPass? <FaEye /> : <FaEyeSlash />
+                                        }
+                                </span>
+                                </div>
+                                
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+
                                 </label>
                             </div>
                             <div className="form-control mt-6">

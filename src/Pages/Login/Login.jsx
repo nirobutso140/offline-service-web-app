@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
 import swal from "sweetalert";
 import app from "../../firebase/firebase.config";
@@ -16,6 +17,7 @@ const Login = () => {
     const { loginUser, user } = useContext(AuthContext)
     const [loginError, setLoginError] = useState('')
     const [loginSuccess, setLoginSuccess] = useState('')
+    const [showPass, setShowPass] = useState(false)
     const navigate = useNavigate()
 
     const auth = getAuth(app)
@@ -68,7 +70,12 @@ const Login = () => {
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                                    <div className="pass">
+                                    <input type={showPass? "text" : "password"} name="password" placeholder="password" className="input input-bordered passInput" required />
+                                    <span className="eye" onClick={()=>setShowPass(!showPass)}>
+                                       {showPass? <FaEye /> : <FaEyeSlash />}
+                                    </span>
+                                    </div>
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                     </label>

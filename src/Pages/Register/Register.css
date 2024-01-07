@@ -4,3 +4,17 @@
     background-size: cover;
     background-attachment: fixed
 }
+
+.pass{
+    position: relative;
+}
+.passInput{
+    width: 285px;
+}
+.eye{
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+}
+
+
