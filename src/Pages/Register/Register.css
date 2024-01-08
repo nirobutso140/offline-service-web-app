@@ -15,6 +15,14 @@
     position: absolute;
     bottom: 15px;
     right: 10px;
+    cursor: pointer;
+}
+.terms_conditions{
+    display: flex;
+    margin-top: 10px;
+}
+.terms_conditions > input{
+    margin-right: 10px;
 }
 
 

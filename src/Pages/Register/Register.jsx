@@ -26,6 +26,7 @@ const Register = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+        const accepted = form.terms.checked;
         setRegisterError('')
         setSuccess('')
         const uppercaseRegex = /[A-Z]/;
@@ -34,6 +35,12 @@ const Register = () => {
           setRegisterError('Error!!! You have to give any uppercase character and special character')
           return ;
         }
+
+        else if(!accepted){
+            setRegisterError("Please accept our terms and conditions")
+            return
+        }
+
         createUser(email,password)
         .then(result =>{
             console.log(result.user);
@@ -85,6 +92,14 @@ const Register = () => {
                                 </span>
                                 </div>
                                 
+
+                                <div className="terms_conditions">
+                                <input type="checkbox" name="terms" id="select" />
+                                <label htmlFor="select">accept our terms and conditions</label>
+                                </div>
+
+                        
+
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
 
