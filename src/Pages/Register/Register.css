@@ -17,12 +17,18 @@
     right: 10px;
     cursor: pointer;
 }
-.terms_conditions{
+.terms_conditions_container{
     display: flex;
-    margin-top: 10px;
+    margin-top: 20px;
 }
-.terms_conditions > input{
-    margin-right: 10px;
+.terms_conditions_container > input{
+    margin-right: 5px;
+}
+.terms_conditions{
+    color: blue;
+}
+.terms_conditions:hover{
+   text-decoration: underline;
 }
 
 

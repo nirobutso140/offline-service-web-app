@@ -93,9 +93,9 @@ const Register = () => {
                                 </div>
                                 
 
-                                <div className="terms_conditions">
+                                <div className="terms_conditions_container">
                                 <input type="checkbox" name="terms" id="select" />
-                                <label htmlFor="select">accept our terms and conditions</label>
+                                <label htmlFor="select">accept our <a href="" className="terms_conditions">terms & conditions</a></label>
                                 </div>
 
                         
