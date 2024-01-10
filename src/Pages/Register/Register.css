@@ -5,6 +5,7 @@
     background-attachment: fixed
 }
 
+
 .pass{
     position: relative;
 }
@@ -24,11 +25,12 @@
 .terms_conditions_container > input{
     margin-right: 5px;
 }
+
 .terms_conditions{
-    color: blue;
-}
-.terms_conditions:hover{
    text-decoration: underline;
 }
 
 
+.terms_conditions:hover{
+    color: blue;
+}

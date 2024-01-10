@@ -1,4 +1,6 @@
 import { Link, useLoaderData } from 'react-router-dom';
+import { MdDeleteForever } from "react-icons/md";
+import { FaUserEdit } from "react-icons/fa";
 import './Manage.css'
 import swal from 'sweetalert';
 import { useEffect, useState } from 'react';
@@ -60,8 +62,8 @@ const Manage = () => {
                                     <p>{manage.serviceProviderName}</p>
                                 </div>
                                 <div className="card-actions justify-end">
-                                    <Link><button onClick={() => handleDelete(manage._id)} className="btn btn-error">Delete</button></Link>
-                                    <Link to={`/edit/${manage._id}`}><button className="btn">Edit</button></Link>
+                                    <Link><button onClick={() => handleDelete(manage._id)} className="btn btn-error"><MdDeleteForever className="delete"/></button></Link>
+                                    <Link to={`/edit/${manage._id}`}><button className="btn"><FaUserEdit className='edit'/></button></Link>
                                 </div>
                             </div>
                         </div>

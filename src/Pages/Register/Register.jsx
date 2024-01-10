@@ -62,13 +62,13 @@ const Register = () => {
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold text-pink-300">Register now!</h1>
+                        <h1 className="text-5xl font-bold text-fuchsia-600">Register now!</h1>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSignUp} className="card-body">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Name</span>
+                                    <span className="label-text">Name</span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
                                 </label>
                                 <input type="text" name="name" placeholder="Name" className="input input-bordered" required/>
                             </div>
