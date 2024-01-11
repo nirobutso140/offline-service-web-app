@@ -83,7 +83,7 @@ const Details = () => {
                                       <input type="date" name='date' placeholder=" Service Taking Date" className="input book input-bordered w-full" />
                                       <input type="text" name='address' placeholder="Address" className="input book input-bordered w-full" />
                                       <input type="text" name='price' placeholder="Price" className="input book input-bordered w-full" defaultValue={detailsInfo.servicePrice} readOnly/>
-                                      <input type="submit" value="Book Now" className="btn btn-block book" />
+                                      <input type="submit" value="Book Now" className="btn btn-block book bg-fuchsia-600 text-white" />
                                     </form>
                                     <div className="modal-action">
                                         <form method="dialog">
